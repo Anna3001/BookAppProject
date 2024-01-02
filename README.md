@@ -13,7 +13,10 @@ Aplikacja mobilna powinna działać na urządzeniach mobilnych (telefonach/table
 Maksymalna punktacja: 3
 
 3. Udoskonalenie Interfejsu Aplikacji Mobilnej i Webowej
-Spójność Wizualna: Jednolite kolory, czcionki i przyciski w całym ekosystemie.         ZREALIZOWANE  
+
+ZREALIZOWANE 
+   
+Spójność Wizualna: Jednolite kolory, czcionki i przyciski w całym ekosystemie.          
 Wysokiej Jakości Ikony i Grafika.                                                      ZREALIZOWANE
 Odpowiedź Interfejsu: Długie operacje powinny być sygnalizowane ikoną ładowania.       NIEZREALIZOWANE
 Wykorzystanie Gotowych Szablonów: Możliwość stosowania i wdrażania gotowych szablonów. KORZYSTAŁAM Z GOTOWYCH IKON 
