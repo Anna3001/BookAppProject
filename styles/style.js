@@ -59,7 +59,7 @@ export const commonStyles = StyleSheet.create({
   buttonText: {
     textAlign: 'center',
     fontFamily: 'Lato-Regular',
-    fontSize: 18,
+    fontSize: 16,
     color: 'white', // Default text color for light mode
   },
 });
