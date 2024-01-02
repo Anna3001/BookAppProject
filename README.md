@@ -1,3 +1,9 @@
+
+Aplikacja mobilna:
+
+https://www.youtube.com/watch?v=_dliaYo8m0k
+
+
 Punkty zrealizowane i niezrealizowane:
 
 NIEZREALIZOWANE
