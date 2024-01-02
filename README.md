@@ -3,6 +3,9 @@ Aplikacja mobilna:
 
 https://www.youtube.com/watch?v=_dliaYo8m0k
 
+Aplikacja webowa:
+
+https://www.youtube.com/watch?v=XBVcjhUpP90
 
 Punkty zrealizowane i niezrealizowane:
 
