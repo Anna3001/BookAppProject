@@ -1,34 +1,27 @@
 // UpdateMovieForm.js
 import React, { useState, useEffect } from 'react';
-import { View, Text, TextInput, TouchableOpacity, StyleSheet } from 'react-native';
+import { View, Text, TextInput, TouchableOpacity, StyleSheet, Platform } from 'react-native';
 import { MovieModel } from '../models/movieModel.js';
 import { updateMovie } from '../viewModels/updateMovieViewModel.js';
-import * as Font from 'expo-font';
-import { useFonts } from 'expo-font';
-import AppLoading from 'expo-app-loading';
 import { ThemeContext } from '../ThemeContext';
 import { useLanguage } from '../LanguageContext';
 import translations from '../translations'; // Import translations
 import { commonStyles, darkModeStyles } from '../styles/style';
+import { useFonts } from '@expo-google-fonts/lato';
 
 const UpdateMovieForm = () => {
   const movie = new MovieModel({});
   const theme = React.useContext(ThemeContext);
   const { currentLanguage } = useLanguage();
 
-  useEffect(() => {
-    Font.loadAsync({
-      LatoRegular: require('../assets/fonts/LatoRegular400.ttf'),
-    });
-  }, []);
-
   const [fontsLoaded] = useFonts({
-    'LatoRegular': require('../assets/fonts/LatoRegular400.ttf'),
+    'Lato-Regular': require('../assets/fonts/LatoRegular400.ttf'),
   });
 
   if (!fontsLoaded) {
-    return <AppLoading />;
+    return <View />;
   }
+
 
   const handleSubmit = () => {
     console.log(movie);
@@ -42,7 +35,7 @@ const UpdateMovieForm = () => {
       </Text>
 
       <Text style={[commonStyles.label, theme.isDarkMode && darkModeStyles.darkModeText]}>
-        {translations[currentLanguage].getID}:
+        {translations[currentLanguage].getID}
       </Text>
       <TextInput
         style={[commonStyles.input, theme.isDarkMode && darkModeStyles.darkModeInput]}
@@ -50,7 +43,7 @@ const UpdateMovieForm = () => {
       />
 
       <Text style={[commonStyles.label, theme.isDarkMode && darkModeStyles.darkModeText]}>
-        {translations[currentLanguage].title}:
+        {translations[currentLanguage].title}
       </Text>
       <TextInput
         style={[commonStyles.input, theme.isDarkMode && darkModeStyles.darkModeInput]}
@@ -58,7 +51,7 @@ const UpdateMovieForm = () => {
       />
 
       <Text style={[commonStyles.label, theme.isDarkMode && darkModeStyles.darkModeText]}>
-        {translations[currentLanguage].director}:
+        {translations[currentLanguage].director}
       </Text>
       <TextInput
         style={[commonStyles.input, theme.isDarkMode && darkModeStyles.darkModeInput]}
@@ -66,7 +59,7 @@ const UpdateMovieForm = () => {
       />
 
       <Text style={[commonStyles.label, theme.isDarkMode && darkModeStyles.darkModeText]}>
-        {translations[currentLanguage].country}:
+        {translations[currentLanguage].country}
       </Text>
       <TextInput
         style={[commonStyles.input, theme.isDarkMode && darkModeStyles.darkModeInput]}
@@ -74,7 +67,7 @@ const UpdateMovieForm = () => {
       />
 
       <Text style={[commonStyles.label, theme.isDarkMode && darkModeStyles.darkModeText]}>
-        {translations[currentLanguage].date}:
+        {translations[currentLanguage].date}
       </Text>
       <TextInput
         style={[commonStyles.input, theme.isDarkMode && darkModeStyles.darkModeInput]}

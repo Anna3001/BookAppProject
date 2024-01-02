@@ -6,6 +6,7 @@ import translations from '../translations';
 import { commonStyles, darkModeStyles } from '../styles/style';
 import { ThemeContext } from '../ThemeContext';
 import { useLanguage } from '../LanguageContext'; 
+import { useFonts } from '@expo-google-fonts/lato';
 import lightmode from '../assets/lightmode.png';
 import darkmode from '../assets/darkmode.png';
 import poland from '../assets/poland.png';
@@ -16,6 +17,14 @@ export const AuthForm = ({ setToken }) => {
   const [registrationData, setRegistrationData] = useState({ username: '', password: '' });
   const theme = React.useContext(ThemeContext);
   const { currentLanguage, changeLanguage } = useLanguage();
+
+  const [fontsLoaded] = useFonts({
+    'Lato-Regular': require('../assets/fonts/LatoRegular400.ttf'),
+  });
+
+  if (!fontsLoaded) {
+    return <View />;
+  }
 
   const handleLoginChange = (e) => {
     setLoginData({ ...loginData, [e.target.name]: e.target.value });
@@ -59,16 +68,17 @@ export const AuthForm = ({ setToken }) => {
     </Text>
 
     <TextInput
-      style={[commonStyles.input, theme.isDarkMode && darkModeStyles.darkModeInput]}
+      style={[commonStyles.input2, theme.isDarkMode && darkModeStyles.darkModeInput]}
       placeholder={translations[currentLanguage].username}
       value={loginData.username}
       onChangeText={(text) => setLoginData({ ...loginData, username: text })}
     />
 
       <TextInput
-        style={[commonStyles.input, theme.isDarkMode && darkModeStyles.darkModeInput]}
+        style={[commonStyles.input2, theme.isDarkMode && darkModeStyles.darkModeInput]}
         placeholder={translations[currentLanguage].password}
         value={loginData.password}
+        secureTextEntry={true}
         onChangeText={(text) => setLoginData({ ...loginData, password: text })}
     />
 
@@ -83,14 +93,14 @@ export const AuthForm = ({ setToken }) => {
     </Text>
 
     <TextInput
-      style={[commonStyles.input, theme.isDarkMode && darkModeStyles.darkModeInput]}
+      style={[commonStyles.input2, theme.isDarkMode && darkModeStyles.darkModeInput]}
       value={registrationData.username}
       placeholder={translations[currentLanguage].username}
       onChangeText={(text) => setRegistrationData({ ...registrationData, username: text })}
     />
 
     <TextInput
-      style={[commonStyles.input, theme.isDarkMode && darkModeStyles.darkModeInput]}
+      style={[commonStyles.input2, theme.isDarkMode && darkModeStyles.darkModeInput]}
       value={registrationData.password}
       placeholder={translations[currentLanguage].password}
       onChangeText={(text) => setRegistrationData({ ...registrationData, password: text })}
@@ -101,6 +111,7 @@ export const AuthForm = ({ setToken }) => {
         {translations[currentLanguage].register}
       </Text>
     </TouchableOpacity>
+    <Text style={styles.marginUnderTable}></Text>
   </View>
   </ScrollView>
   );
@@ -110,6 +121,7 @@ const styles = StyleSheet.create({
   scrollViewContainer: {
     flexGrow: 1,
   },
+  marginUnderTable: { paddingVertical: 30 },
   container: {
     flex: 1,
     backgroundColor: '#fdf3f3', // Default background color for light mode

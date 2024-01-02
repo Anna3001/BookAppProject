@@ -34,9 +34,6 @@
       }
     },
     "assets": ["./assets/fonts/"],
-    "fonts": {
-      "AndaleMono": "./assets/fonts/ANDALEMO.TTF"
-    },
     "web": {
       "favicon": "./assets/favicon.png"
     }

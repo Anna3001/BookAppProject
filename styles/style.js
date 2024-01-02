@@ -11,7 +11,7 @@ export const commonStyles = StyleSheet.create({
   label: {
     fontSize: 18,
     marginBottom: 8,
-    fontFamily: 'LatoRegular',
+    fontFamily: 'Lato-Regular',
     color: 'black', // Default text color for light mode
   },
   input: {
@@ -25,12 +25,24 @@ export const commonStyles = StyleSheet.create({
     borderRadius: 20,
     color: 'black', // Default text color for light mode
   },
+  input2: {
+    height: 40,
+    width: 320,
+    borderColor: 'gray',
+    backgroundColor: 'white',
+    borderWidth: 1,
+    marginTop: 16,
+    marginBottom: 16,
+    paddingHorizontal: 10,
+    borderRadius: 20,
+    color: 'black', // Default text color for light mode
+  },
   title: {
     fontSize: 25,
     marginBottom: 20,
     marginTop: 40,
     textAlign: 'center',
-    fontFamily: 'LatoRegular',
+    fontFamily: 'Lato-Regular',
     color: 'black', // Default text color for light mode
   },
   styleBtn: {
@@ -46,7 +58,7 @@ export const commonStyles = StyleSheet.create({
   },
   buttonText: {
     textAlign: 'center',
-    fontFamily: 'LatoRegular',
+    fontFamily: 'Lato-Regular',
     fontSize: 18,
     color: 'white', // Default text color for light mode
   },
@@ -81,6 +93,6 @@ export const movieDetailsStyles = StyleSheet.create({
     fontSize: 16,
     marginBottom: 8,
     color: 'white',
-    fontFamily: 'LatoRegular',
+    fontFamily: 'Lato-Regular',
   },
 });

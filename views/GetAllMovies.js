@@ -1,8 +1,9 @@
 // GetAllMovies.js
 import React, { useEffect } from 'react';
-import { View, Text, ScrollView, TouchableOpacity } from 'react-native';
+import { View, Text, ScrollView, TouchableOpacity, Platform } from 'react-native';
 import { getAll } from '../viewModels/getAllMoviesViewModel.js';
 import * as Font from 'expo-font';
+import { useFonts } from '@expo-google-fonts/lato';
 import { ThemeContext } from '../ThemeContext';
 import { useLanguage } from '../LanguageContext';
 import translations from '../translations'; // Import translations
@@ -13,11 +14,14 @@ const GetAllMovies = () => {
   const theme = React.useContext(ThemeContext);
   const { currentLanguage } = useLanguage();
 
-  useEffect(() => {
-    Font.loadAsync({
-      LatoRegular: require('../assets/fonts/LatoRegular400.ttf'),
-    });
-  }, []);
+  const [fontsLoaded] = useFonts({
+    'Lato-Regular': require('../assets/fonts/LatoRegular400.ttf'),
+  });
+
+  if (!fontsLoaded) {
+    return <View />;
+  }
+
 
   const handleSubmit = () => {
     getAll(start);

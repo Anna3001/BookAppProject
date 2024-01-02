@@ -1,9 +1,9 @@
 // DeleteMovieForm.js
 import React, { useState, useEffect } from 'react';
-import { View, Text, TextInput, TouchableOpacity, StyleSheet } from 'react-native';
+import { View, Text, TextInput, TouchableOpacity, StyleSheet, Platform } from 'react-native';
 import { deleteId } from '../viewModels/deleteMovieViewModel.js';
 import * as Font from 'expo-font';
-import { useFonts } from 'expo-font';
+import { useFonts } from '@expo-google-fonts/lato';
 import AppLoading from 'expo-app-loading';
 import { ThemeContext } from '../ThemeContext';
 import { useLanguage } from '../LanguageContext';
@@ -15,18 +15,12 @@ const DeleteMovieForm = () => {
   const theme = React.useContext(ThemeContext);
   const { currentLanguage } = useLanguage();
 
-  useEffect(() => {
-    Font.loadAsync({
-      LatoRegular: require('../assets/fonts/LatoRegular400.ttf'),
-    });
-  }, []);
-
   const [fontsLoaded] = useFonts({
-    'LatoRegular': require('../assets/fonts/LatoRegular400.ttf'),
+    'Lato-Regular': require('../assets/fonts/LatoRegular400.ttf'),
   });
 
   if (!fontsLoaded) {
-    return <AppLoading />;
+    return <View />;
   }
 
   const handleSubmit = () => {
@@ -40,7 +34,7 @@ const DeleteMovieForm = () => {
       </Text>
 
       <Text style={[commonStyles.label, theme.isDarkMode && darkModeStyles.darkModeText]}>
-        {translations[currentLanguage].getID}:
+        {translations[currentLanguage].getID}
       </Text>
       <TextInput
         style={[commonStyles.input, theme.isDarkMode && darkModeStyles.darkModeInput]}

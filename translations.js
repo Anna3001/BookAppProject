@@ -29,7 +29,7 @@ const translations = {
     titleLabel: 'Title',
     directorLabel: 'Director',
     countryLabel: 'Country',
-    dateLabel: 'Date:',
+    dateLabel: 'Date',
     addButton: 'Add',
     idLabel: 'Id',
     titleLabel: 'Title',

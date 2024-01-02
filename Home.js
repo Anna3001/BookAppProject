@@ -1,8 +1,8 @@
 // App.js
-import React from 'react';
+import React, {useState} from 'react';
 import { StyleSheet, ScrollView, View, TouchableOpacity, StatusBar, Text, Image } from 'react-native';
 import { ThemeProvider, ThemeContext } from './ThemeContext';
-import { LanguageProvider, useLanguage } from './LanguageContext'; // Import LanguageProvider and useLanguage
+import { LanguageProvider, useLanguage } from './LanguageContext'; 
 
 import AddMovieForm from './views/AddMovieForm';
 import UpdateMovieForm from './views/UpdateMovieForm';
@@ -19,6 +19,7 @@ import unitedkingdom from './assets/unitedkingdom.png';
 const Home = () => {
   const theme = React.useContext(ThemeContext);
   const { currentLanguage, changeLanguage } = useLanguage();
+  const [movies, setMovies] = useState([]);
   
   return (
   <ScrollView contentContainerStyle={styles.scrollViewContainer}>
@@ -43,7 +44,7 @@ const Home = () => {
           <GetByTDForm />
            <GetById />
            <GetAllMovies />
-          <TableView />
+           <TableView movies={movies} setMovies={setMovies}/>
         </View>
       </ScrollView>
      );

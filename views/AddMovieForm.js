@@ -1,12 +1,11 @@
 // AddMovieForm.js
 import React, { useState } from 'react';
-import { useEffect } from 'react';
-import { View, Text, TextInput, TouchableOpacity, StyleSheet } from 'react-native';
+import { View, Text, TextInput, TouchableOpacity, StyleSheet, Platform } from 'react-native';
 import { addMovie } from '../viewModels/addMovieViewModel.js';
 import { MovieModel } from '../models/movieModel.js';
-import * as Font from 'expo-font';
 import { ThemeContext } from '../ThemeContext';
 import { useLanguage } from '../LanguageContext';
+import { useFonts } from '@expo-google-fonts/lato';
 import translations from '../translations'; // Import translations
 import { commonStyles, darkModeStyles } from '../styles/style';
 
@@ -15,11 +14,13 @@ const AddMovieForm = () => {
   const theme = React.useContext(ThemeContext);
   const { currentLanguage } = useLanguage();
 
-  useEffect(() => {
-    Font.loadAsync({
-      LatoRegular: require('../assets/fonts/LatoRegular400.ttf'),
-    });
-  }, []);
+  const [fontsLoaded] = useFonts({
+    'Lato-Regular': require('../assets/fonts/LatoRegular400.ttf'),
+  });
+
+  if (!fontsLoaded) {
+    return <View />;
+  }
 
   const handleSubmit = () => {
     addMovie(movie);

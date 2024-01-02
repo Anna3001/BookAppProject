@@ -1,14 +1,12 @@
 // GetById.js
-import React, { useState } from 'react';
-import { View, Text, TextInput, TouchableOpacity, StyleSheet } from 'react-native';
+import React, { useState ,useEffect } from 'react';
+import { View, Text, TextInput, TouchableOpacity, StyleSheet, Platform } from 'react-native';
 import { getById } from '../viewModels/getByIdViewModel';
-import * as Font from 'expo-font';
-import { useFonts } from 'expo-font';
-import AppLoading from 'expo-app-loading';
+import { useFonts } from '@expo-google-fonts/lato';
 import { ThemeContext } from '../ThemeContext';
 import { useLanguage } from '../LanguageContext';
 import translations from '../translations'; // Import translations
-import { commonStyles, darkModeStyles } from '../styles/style';
+import { commonStyles, darkModeStyles, movieDetailsStyles } from '../styles/style';
 
 const GetById = () => {
   const [id, setId] = useState('');
@@ -17,11 +15,11 @@ const GetById = () => {
   const { currentLanguage, changeLanguage } = useLanguage();
 
   const [fontsLoaded] = useFonts({
-    'LatoRegular': require('../assets/fonts/LatoRegular400.ttf'),
+    'Lato-Regular': require('../assets/fonts/LatoRegular400.ttf'),
   });
 
   if (!fontsLoaded) {
-    return <AppLoading />;
+    return <View />;
   }
 
   const handleSubmit = async () => {
@@ -41,7 +39,7 @@ const GetById = () => {
       </Text>
 
       <Text style={[commonStyles.label, theme.isDarkMode && darkModeStyles.darkModeText]}>
-        {translations[currentLanguage].getID}:
+        {translations[currentLanguage].getID}
       </Text>
       <TextInput
         style={[commonStyles.input, theme.isDarkMode && darkModeStyles.darkModeInput]}
@@ -56,17 +54,17 @@ const GetById = () => {
       </TouchableOpacity>
 
       {movieDetails && (
-        <View style={[styles2.movieDetailsContainer, theme.isDarkMode && styles2.darkModeDetailsContainer]}>
-          <Text style={[styles2.movieDetail, theme.isDarkMode && styles2.darkModeText]}>
+        <View style={[movieDetailsStyles.movieDetailsContainer, theme.isDarkMode && movieDetailsStyles.darkModeDetailsContainer]}>
+          <Text style={[movieDetailsStyles.movieDetail, theme.isDarkMode && movieDetailsStyles.darkModeText]}>
             {`${translations[currentLanguage].getTitle}: ${movieDetails.title}`}
           </Text>
-          <Text style={[styles2.movieDetail, theme.isDarkMode && styles2.darkModeText]}>
+          <Text style={[movieDetailsStyles.movieDetail, theme.isDarkMode && movieDetailsStyles.darkModeText]}>
             {`${translations[currentLanguage].getDirector}: ${movieDetails.director}`}
           </Text>
-          <Text style={[styles2.movieDetail, theme.isDarkMode && styles2.darkModeText]}>
+          <Text style={[movieDetailsStyles.movieDetail, theme.isDarkMode && movieDetailsStyles.darkModeText]}>
             {`${translations[currentLanguage].getCountry}: ${movieDetails.country}`}
           </Text>
-          <Text style={[styles2.movieDetail, theme.isDarkMode && styles2.darkModeText]}>
+          <Text style={[movieDetailsStyles.movieDetail, theme.isDarkMode && movieDetailsStyles.darkModeText]}>
             {`${translations[currentLanguage].getDate}: ${movieDetails.date}`}
           </Text>
         </View>
