@@ -16,11 +16,23 @@ Maksymalna punktacja: 3
 
 ZREALIZOWANE 
    
-Spójność Wizualna: Jednolite kolory, czcionki i przyciski w całym ekosystemie.          
-Wysokiej Jakości Ikony i Grafika.                                                      ZREALIZOWANE
-Odpowiedź Interfejsu: Długie operacje powinny być sygnalizowane ikoną ładowania.       NIEZREALIZOWANE
-Wykorzystanie Gotowych Szablonów: Możliwość stosowania i wdrażania gotowych szablonów. KORZYSTAŁAM Z GOTOWYCH IKON 
-Walidacja danych Zrobiona dla UI oraz API Maksymalna punktacja: 8                      CZĘŚCIOWO ZREALIZOWANE          
+Spójność Wizualna: Jednolite kolory, czcionki i przyciski w całym ekosystemie.    
+
+ZREALIZOWANE
+
+Wysokiej Jakości Ikony i Grafika.    
+
+NIEZREALIZOWANE
+
+Odpowiedź Interfejsu: Długie operacje powinny być sygnalizowane ikoną ładowania.  
+
+KORZYSTAŁAM Z GOTOWYCH IKON
+
+Wykorzystanie Gotowych Szablonów: Możliwość stosowania i wdrażania gotowych szablonów.  
+
+CZĘŚCIOWO ZREALIZOWANE
+
+Walidacja danych Zrobiona dla UI oraz API Maksymalna punktacja: 8                                
 
 ZREALIZOWANE
 
