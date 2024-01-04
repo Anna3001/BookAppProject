@@ -39,8 +39,6 @@ KORZYSTAŁAM Z GOTOWYCH IKON
 
 Wykorzystanie Gotowych Szablonów: Możliwość stosowania i wdrażania gotowych szablonów.  
 
-CZĘŚCIOWO ZREALIZOWANE
-
 Walidacja danych Zrobiona dla UI oraz API Maksymalna punktacja: 8                                
 
 ZREALIZOWANE
